@@ -1,6 +1,6 @@
-﻿using Amz.Application.Commands;
+﻿using Amz.Api.ViewModels.Product;
+using Amz.Application.Commands;
 using Amz.Application.Queries;
-using Amz.Domain.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Amz.Api.Controllers
@@ -8,7 +8,7 @@ namespace Amz.Api.Controllers
     // to remove domain from projects
     [ApiController] // to check what it's doing
     [Route("[controller]")]
-    public class ProductsController : BaseController<ProductsController> 
+    public class ProductsController : BaseController<ProductsController>
     {
 
         [HttpGet]
@@ -20,9 +20,9 @@ namespace Amz.Api.Controllers
             return Ok(result);
         }
         [HttpPost]
-        public async Task<IActionResult> Create([FromBody] Product product)
+        public async Task<IActionResult> Create([FromBody] ProductCreateViewModel productViewModel)
         {
-            var command = new CreateProductCommand() { NewProduct = product };
+            var command = Mapper.Map<CreateProductCommand>(productViewModel);
             try
             {
                 var result = await Mediator.Send(command);

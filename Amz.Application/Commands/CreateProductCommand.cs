@@ -5,6 +5,6 @@ namespace Amz.Application.Commands
 {
     public class CreateProductCommand : IRequest<Product>
     {
-        public Product NewProduct { get; set; }
+        public string Name { get; set; }
     }
 }

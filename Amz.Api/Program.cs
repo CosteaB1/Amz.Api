@@ -1,5 +1,9 @@
+using Amz.Api.AutoMapperProfiles;
+using Amz.Api.Validators.Product;
 using Amz.Application.Queries;
 using Amz.DAL.Context;
+using FluentValidation;
+using FluentValidation.AspNetCore;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 
@@ -26,7 +30,10 @@ internal class Program
         });
         builder.Services.AddMediatR(typeof(GetAllProductsQuery));
 
+        builder.Services.AddFluentValidation();
+        builder.Services.AddValidatorsFromAssemblyContaining<ProductCreateViewModelValidator>();
 
+        builder.Services.AddAutoMapper(typeof(ProductProfile), typeof(Amz.Application.AutoMapperProfiles.ProductProfile));
         var app = builder.Build();
 
         // Configure the HTTP request pipeline.
