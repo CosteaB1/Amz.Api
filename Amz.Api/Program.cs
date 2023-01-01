@@ -9,6 +9,11 @@ internal class Program
     {
         var builder = WebApplication.CreateBuilder(args);
 
+        builder.Host.ConfigureLogging(logging => {
+            logging.ClearProviders();
+            logging.AddConsole();
+        });
+
         // Add services to the container.
 
         builder.Services.AddControllers();
@@ -20,6 +25,8 @@ internal class Program
             options.UseSqlServer(builder.Configuration.GetConnectionString("Default"));
         });
         builder.Services.AddMediatR(typeof(GetAllProductsQuery));
+
+
         var app = builder.Build();
 
         // Configure the HTTP request pipeline.

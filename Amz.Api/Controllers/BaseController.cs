@@ -4,9 +4,9 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Amz.Api.Controllers
 {
-    public class BaseController<T>: ControllerBase where T : BaseController<T>
+    public class BaseController<T>: ControllerBase where T : BaseController<T> // to check difference between Controller and ControllerBase
     {
-        private ILogger<T> _logger;
+        private ILogger<T>? _logger;
         private IMediator? _mediator;
         private IMapper? _mapper;
 
