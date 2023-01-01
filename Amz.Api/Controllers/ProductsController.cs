@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Amz.Api.Controllers
 {
+    // to remove domain from projects
     [ApiController] // to check what it's doing
     [Route("[controller]")]
     public class ProductsController : Controller // to check difference between Controller and ControllerBase

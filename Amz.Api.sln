@@ -9,9 +9,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{A90E12F8
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Amz.Domain", "Amz.Domain\Amz.Domain.csproj", "{5EB7106F-9280-470D-B963-3BB36A275A40}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Amz.Application", "Application\Amz.Application.csproj", "{2DE34941-0BE9-472F-A8BD-96821A4122E4}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Amz.Application", "Amz.Application\Amz.Application.csproj", "{2DE34941-0BE9-472F-A8BD-96821A4122E4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Amz.DAL", "DAL\Amz.DAL.csproj", "{60F9D12C-692C-4F30-BBEC-FF716BF0DA32}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Amz.DAL", "Amz.DAL\Amz.DAL.csproj", "{60F9D12C-692C-4F30-BBEC-FF716BF0DA32}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
