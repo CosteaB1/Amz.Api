@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33103.184
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Amz.Api", "Amz.Api\Amz.Api.csproj", "{77AE8A4B-4BBD-4619-B626-F0729C255150}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{77AE8A4B-4BBD-4619-B626-F0729C255150}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{77AE8A4B-4BBD-4619-B626-F0729C255150}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{77AE8A4B-4BBD-4619-B626-F0729C255150}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{77AE8A4B-4BBD-4619-B626-F0729C255150}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3BC59790-72A1-409B-B185-4C2925F93631}
+	EndGlobalSection
+EndGlobal
