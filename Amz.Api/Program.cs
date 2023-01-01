@@ -1,3 +1,6 @@
+using Amz.DAL.Context;
+using Microsoft.EntityFrameworkCore;
+
 internal class Program
 {
     private static void Main(string[] args)
@@ -10,7 +13,10 @@ internal class Program
         // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
         builder.Services.AddEndpointsApiExplorer();
         builder.Services.AddSwaggerGen();
-
+        builder.Services.AddDbContext<AmzDbContext>(options =>
+        {
+            options.UseSqlServer(builder.Configuration.GetConnectionString("Default"));
+        });
         var app = builder.Build();
 
         // Configure the HTTP request pipeline.

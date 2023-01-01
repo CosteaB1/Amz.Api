@@ -3,7 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33103.184
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Amz.Api", "Amz.Api\Amz.Api.csproj", "{77AE8A4B-4BBD-4619-B626-F0729C255150}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Amz.Api", "Amz.Api\Amz.Api.csproj", "{77AE8A4B-4BBD-4619-B626-F0729C255150}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{A90E12F8-3D57-4DA9-9BFC-6E25DA8DD979}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Amz.Domain", "Amz.Domain\Amz.Domain.csproj", "{5EB7106F-9280-470D-B963-3BB36A275A40}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Amz.Application", "Application\Amz.Application.csproj", "{2DE34941-0BE9-472F-A8BD-96821A4122E4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Amz.DAL", "DAL\Amz.DAL.csproj", "{60F9D12C-692C-4F30-BBEC-FF716BF0DA32}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +23,18 @@ Global
 		{77AE8A4B-4BBD-4619-B626-F0729C255150}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{77AE8A4B-4BBD-4619-B626-F0729C255150}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{77AE8A4B-4BBD-4619-B626-F0729C255150}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5EB7106F-9280-470D-B963-3BB36A275A40}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5EB7106F-9280-470D-B963-3BB36A275A40}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5EB7106F-9280-470D-B963-3BB36A275A40}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5EB7106F-9280-470D-B963-3BB36A275A40}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2DE34941-0BE9-472F-A8BD-96821A4122E4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2DE34941-0BE9-472F-A8BD-96821A4122E4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2DE34941-0BE9-472F-A8BD-96821A4122E4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2DE34941-0BE9-472F-A8BD-96821A4122E4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{60F9D12C-692C-4F30-BBEC-FF716BF0DA32}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{60F9D12C-692C-4F30-BBEC-FF716BF0DA32}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{60F9D12C-692C-4F30-BBEC-FF716BF0DA32}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{60F9D12C-692C-4F30-BBEC-FF716BF0DA32}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
