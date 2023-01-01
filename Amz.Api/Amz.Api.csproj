@@ -17,6 +17,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Amz.Application\Amz.Application.csproj" />
     <ProjectReference Include="..\Amz.Domain\Amz.Domain.csproj" />
     <ProjectReference Include="..\Amz.DAL\Amz.DAL.csproj" />
   </ItemGroup>

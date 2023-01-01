@@ -1,4 +1,6 @@
-﻿using Amz.Domain.Models;
+﻿using Amz.Application.Commands;
+using Amz.Application.Queries;
+using Amz.Domain.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Amz.Api.Controllers
@@ -6,15 +8,22 @@ namespace Amz.Api.Controllers
     // to remove domain from projects
     [ApiController] // to check what it's doing
     [Route("[controller]")]
-    public class ProductsController : Controller // to check difference between Controller and ControllerBase
+    public class ProductsController : BaseController<ProductsController> // to check difference between Controller and ControllerBase
     {
 
-        //[HttpGet] // if we do not specify by default is Get
-        //[Route("{id}")]
-        //public IActionResult GetById(int id)
-        //{
-        //    var product = new Product { Id = id, Name = "TestName" };
-        //    return Ok(product);
-        //}
+        [HttpGet]
+        [Route("GetAll")]
+        public async Task<IActionResult> GetAll()
+        {
+            var result = await Mediator.Send(new GetAllProductsQuery());
+            return Ok(result);
+        }
+        [HttpPost]
+        public async Task<IActionResult> Create([FromBody] Product product)
+        {
+            var command = new CreateProductCommand() { NewProduct = product };
+            var result = await Mediator.Send(command);
+            return Ok(result);
+        }
     }
 }

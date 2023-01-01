@@ -1,4 +1,6 @@
+using Amz.Application.Queries;
 using Amz.DAL.Context;
+using MediatR;
 using Microsoft.EntityFrameworkCore;
 
 internal class Program
@@ -17,6 +19,7 @@ internal class Program
         {
             options.UseSqlServer(builder.Configuration.GetConnectionString("Default"));
         });
+        builder.Services.AddMediatR(typeof(GetAllProductsQuery));
         var app = builder.Build();
 
         // Configure the HTTP request pipeline.

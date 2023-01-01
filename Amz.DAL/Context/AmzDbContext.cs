@@ -8,7 +8,7 @@ namespace Amz.DAL.Context
     {
         public AmzDbContext(DbContextOptions<AmzDbContext> options) : base(options) { }
 
-        DbSet<Product> Products { get; set; }
+        public DbSet<Product> Products { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
