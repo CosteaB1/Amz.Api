@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Amz.DAL.Migrations
 {
     [DbContext(typeof(AmzDbContext))]
-    [Migration("20230102131202_testMigration")]
-    partial class testMigration
+    [Migration("20230102131202_Added_Category_table")]
+    partial class Added_Category_table
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

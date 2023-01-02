@@ -4,7 +4,7 @@
 
 namespace Amz.DAL.Migrations
 {
-    public partial class testMigration : Migration
+    public partial class Added_Category_table : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
