@@ -3,9 +3,9 @@ using FluentValidation;
 
 namespace Amz.Api.Validators.Product
 {
-    public class CreateProductViewModelValidator : AbstractValidator<CreateProductViewModel>
+    public class UpdateProductViewModelValidator : AbstractValidator<UpdateProductViewModel>
     {
-        public CreateProductViewModelValidator()
+        public UpdateProductViewModelValidator()
         {
             RuleFor(x => x.Name).NotNull().NotEmpty().Length(1, 255);
             RuleFor(x => x.CategoryId).NotNull().NotEmpty().GreaterThan(0);

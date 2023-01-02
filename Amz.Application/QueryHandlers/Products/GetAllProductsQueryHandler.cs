@@ -1,10 +1,10 @@
-﻿using Amz.Application.Queries;
+﻿using Amz.Application.Queries.Products;
 using Amz.DAL.Context;
 using Amz.Domain.Models;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 
-namespace Amz.Application.QueryHandlers
+namespace Amz.Application.QueryHandlers.Products
 {
     public class GetAllProductsQueryHandler : IRequestHandler<GetAllProductsQuery, List<Product>>
     {

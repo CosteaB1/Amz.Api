@@ -1,5 +1,6 @@
 ﻿using Amz.Api.ViewModels.Product;
-using Amz.Application.Commands;
+using Amz.Application.Commands.Products;
+using Amz.Application.Dto.Product;
 using AutoMapper;
 
 namespace Amz.Api.AutoMapperProfiles
@@ -8,7 +9,12 @@ namespace Amz.Api.AutoMapperProfiles
     {
         public ProductProfile()
         {
-            CreateMap<ProductCreateViewModel, CreateProductCommand>();
+            CreateMap<CreateProductViewModel, CreateProductCommand>();
+            CreateMap<ProductDto, CreateProductViewModel>();
+
+            CreateMap<UpdateProductViewModel, UpdateProductCommand>();
+            CreateMap<ProductDto, UpdateProductViewModel>();
+
         }
     }
 }

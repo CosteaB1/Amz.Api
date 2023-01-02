@@ -1,6 +1,6 @@
 ﻿using Amz.Api.ViewModels.Product;
-using Amz.Application.Commands;
-using Amz.Application.Queries;
+using Amz.Application.Commands.Products;
+using Amz.Application.Queries.Products;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Amz.Api.Controllers
@@ -20,14 +20,52 @@ namespace Amz.Api.Controllers
             return Ok(result);
         }
         [HttpPost]
-        public async Task<IActionResult> Create([FromBody] ProductCreateViewModel productViewModel)
+        public async Task<IActionResult> Create([FromBody] CreateProductViewModel productViewModel)
         {
             var command = Mapper.Map<CreateProductCommand>(productViewModel);
             try
             {
-                var result = await Mediator.Send(command);
+                var respone = await Mediator.Send(command);
+                var result = Mapper.Map<CreateProductViewModel>(respone);
                 return Ok(result);
 
+            }
+            catch (Exception ex)
+            {
+                Logger.LogError(ex.Message);
+                return StatusCode(500);
+            }
+        }
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> Delete(Guid id)
+        {
+            try
+            {
+                var productToDeleteCmd = new DeleteProductCommand
+                {
+                    Id = id,
+                };
+                var deletedId = await Mediator.Send(productToDeleteCmd);
+                return Ok(deletedId);
+            }
+            catch (Exception ex)
+            {
+                Logger.LogError(ex.Message);
+                return StatusCode(500);
+            }
+
+        }
+
+        [HttpPut("{id}")]
+        public async Task<IActionResult> Update([FromRoute] Guid id, UpdateProductViewModel productUpdate)
+        {
+            var command = Mapper.Map<UpdateProductCommand>(productUpdate);
+            command.Id = id;
+            try
+            {
+                var respone = await Mediator.Send(command);
+                var result = Mapper.Map<UpdateProductViewModel>(respone);
+                return Ok(result);
             }
             catch (Exception ex)
             {

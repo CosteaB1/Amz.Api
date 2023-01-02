@@ -1,4 +1,5 @@
-﻿using Amz.Application.Commands;
+﻿using Amz.Application.Commands.Products;
+using Amz.Application.Dto.Product;
 using Amz.Domain.Models;
 using AutoMapper;
 
@@ -9,6 +10,7 @@ namespace Amz.Application.AutoMapperProfiles
         public ProductProfile()
         {
             CreateMap<CreateProductCommand, Product>();
+            CreateMap<Product, ProductDto>();
         }
     }
 }

@@ -1,6 +1,6 @@
 using Amz.Api.AutoMapperProfiles;
 using Amz.Api.Validators.Product;
-using Amz.Application.Queries;
+using Amz.Application.Queries.Products;
 using Amz.DAL.Context;
 using FluentValidation;
 using FluentValidation.AspNetCore;
@@ -31,7 +31,7 @@ internal class Program
         builder.Services.AddMediatR(typeof(GetAllProductsQuery));
 
         builder.Services.AddFluentValidation();
-        builder.Services.AddValidatorsFromAssemblyContaining<ProductCreateViewModelValidator>();
+        builder.Services.AddValidatorsFromAssemblyContaining<CreateProductViewModelValidator>();
 
         builder.Services.AddAutoMapper(typeof(ProductProfile), typeof(Amz.Application.AutoMapperProfiles.ProductProfile));
         var app = builder.Build();
