@@ -11,9 +11,9 @@ namespace Amz.DAL.EntityConfiguration
             builder.Property(p => p.Name).HasMaxLength(255);
             builder.Property(p => p.Description).HasMaxLength(150);
 
-            builder.HasOne<Category>(c => c.Category)
-                .WithMany(p => p.Products)
-                .HasForeignKey(s => s.CategoryId);
+            //builder.HasOne<Category>(c => c.Category)
+            //    .WithMany(p => p.Products)
+            //    .HasForeignKey(s => s.CategoryId);
         }
     }
 }

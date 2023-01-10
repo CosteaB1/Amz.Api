@@ -1,9 +1,14 @@
-﻿namespace Amz.Domain.Models
+﻿using Amz.Domain.Primitives;
+
+namespace Amz.Domain.Models
 {
-    public class Category
+    public sealed class Category : Entity
     {
-        public int Id { get; set; }
+        public Category(Guid id) : base(id)
+        {
+        }
+
         public string Name { get; set; }
-        public ICollection<Product> Products { get; set; }
+        public ICollection<SubCategory> SubCategories { get; set; }
     }
 }
