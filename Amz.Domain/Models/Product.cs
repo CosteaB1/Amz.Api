@@ -41,9 +41,7 @@ namespace Amz.Domain.Models
 
         // static factory method on entity
 
-        // A static method in C# is a method that keeps only one copy of the method at the Type level,
-        // not the object level. That means, all instances of the class share the same copy of the method
-        // and its data. The last updated value of the method is shared among all objects of that Type. 
+
         public static Result<Product> Create(Name name, string description, Guid categoryId, Guid subCategoryId, string otherDetails, Guid supplierId, int quantity)
         {
             var product = new Product(Guid.NewGuid(), name, description, categoryId, subCategoryId, otherDetails, supplierId, quantity);
@@ -56,11 +54,22 @@ namespace Amz.Domain.Models
             return product;
         }
 
+        public static Result Update(Name name, string description, Guid categoryId, Guid subCategoryId, string otherDetails, Guid supplierId, int quantity)
+        {
+
+            //if (string.IsNullOrEmpty(description))
+            //{
+            //    return Result.Failure();
+            //}
+
+
+            return Result.Success();
+        }
+
         public static Guid Delete(Guid id)
         {
 
             return id;
         }
-
     }
 }

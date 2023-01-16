@@ -1,4 +1,5 @@
-﻿using Amz.Domain.Primitives;
+﻿using Amz.Domain.Errors;
+using Amz.Domain.Primitives;
 using Amz.Domain.Shared;
 
 namespace Amz.Domain.ValueObjects
@@ -18,17 +19,11 @@ namespace Amz.Domain.ValueObjects
         {
             if (string.IsNullOrWhiteSpace(name))
             {
-                return Result.Failure<Name>(new Error(
-                    "Name.Empty",
-                    "First name is empty"
-                    ));
+                return Result.Failure<Name>(DomainErrors.Product.NameIsEmpty);
             }
             if (name.Length > MaxLength)
             {
-                return Result.Failure<Name>(new Error(
-                    "Name.TooLong",
-                    "First name is too long"
-                    ));
+                return Result.Failure<Name>(DomainErrors.Product.NameIsTooLong);
             }
             return new Name(name);
         }
