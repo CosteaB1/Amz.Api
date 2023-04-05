@@ -8,13 +8,13 @@ namespace Amz.Domain.Models
     public sealed class Product : Entity
     {
         private Product(Guid id,
-                        Name name,
-                        string description,
-                        Guid categoryId,
-                        Guid subCategoryId,
-                        string otherDetails,
-                        Guid supplierId,
-                        int quantity) : base(id)
+            Name name,
+            string description,
+            Guid categoryId,
+            Guid subCategoryId,
+            string otherDetails,
+            Guid supplierId,
+            int quantity) : base(id)
         {
             Name = name;
             Description = description;
@@ -29,46 +29,41 @@ namespace Amz.Domain.Models
         public Name Name { get; private set; }
         public string Description { get; private set; }
         public Guid CategoryId { get; private set; }
+        //public Category Category { get; private set; } // do I need it ? 
         public Guid SubCategoryId { get; private set; }
-        public Category Category { get; private set; } // do I need it ? 
-        public SubCategory SubCategory { get; private set; } // do I need it ? 
+        //public SubCategory SubCategory { get; private set; } // do I need it ? 
         public string OtherDetails { get; private set; }
         public Guid SupplierId { get; private set; }
-        public Supplier Supplier { get; private set; } // do I need it ? 
+        //public Supplier Supplier { get; private set; } // do I need it ? 
         public int Quantity { get; private set; }
-        public ProductStatus Status { get; set; }
+        //public ProductStatus Status { get; private set; }
         public DateTime CreatedOnUtc { get; private set; }
 
         // static factory method on entity
 
 
-        public static Result<Product> Create(Name name, string description, Guid categoryId, Guid subCategoryId, string otherDetails, Guid supplierId, int quantity)
+        public static Result<Product> Create(Name name, string description, Guid categoryId, Guid subCategoryId,
+            string otherDetails, Guid supplierId, int quantity)
         {
-            var product = new Product(Guid.NewGuid(), name, description, categoryId, subCategoryId, otherDetails, supplierId, quantity);
-            // need to add validation 
+            var product = new Product(Guid.NewGuid(), name, description, categoryId, subCategoryId, otherDetails,
+                supplierId, quantity);
+
             if (quantity == 0)
             {
                 return Result.Failure<Product>(DomainErrors.Product.QuantityIsZero);
             }
-            // can add more logic
+
             return product;
         }
 
-        public static Result Update(Name name, string description, Guid categoryId, Guid subCategoryId, string otherDetails, Guid supplierId, int quantity)
+        public static Result Update(Name name, string description, Guid categoryId, Guid subCategoryId,
+            string otherDetails, Guid supplierId, int quantity)
         {
-
-            //if (string.IsNullOrEmpty(description))
-            //{
-            //    return Result.Failure();
-            //}
-
-
             return Result.Success();
         }
 
         public static Guid Delete(Guid id)
         {
-
             return id;
         }
     }

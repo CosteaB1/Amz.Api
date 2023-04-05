@@ -4,10 +4,10 @@ namespace Amz.Domain.Models
 {
     public sealed class ProductStatus : Entity
     {
-        public ProductStatus(Guid id) : base(id)
+        public ProductStatus(Guid id, string name) : base(id)
         {
-
+            Name = name;
         }
-        public string Name { get; set; }
+        public string Name { get; private set; }
     }
 }

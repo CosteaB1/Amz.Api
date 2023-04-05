@@ -4,12 +4,16 @@ namespace Amz.Domain.Models
 {
     public sealed class SubCategory : Entity
     {
-        public SubCategory(Guid id) : base(id)
-        {
+        private readonly List<Product> _products = new();
 
+        public SubCategory(Guid id, string name, Guid categoryId) : base(id)
+        {
+            Name = name;
+            CategoryId = categoryId;
         }
+
         public string Name { get; private set; }
         public Guid CategoryId { get; private set; }
-        public ICollection<Product> Products { get; set; }
+        public IReadOnlyCollection<Product> Products => _products;
     }
 }

@@ -4,13 +4,16 @@
     //continuity -> means that we need to be able to track an object through  the lifetime of our application
     //identity -> means we can uniquely identify each object in our system
     //An object primarily defined by its identity is called an Entity
-    public abstract class Entity : IEquatable<Entity>  // to check what is IEquatable
+    
+    //Entity should be used only as a base class of other classes, not instantiated on its own.
+    //IEquatable Defines a generalized method that a value type or class implements to create a type-specific method for determining equality of instances.
+    public abstract class Entity : IEquatable<Entity>
     {
         protected Entity(Guid id)
         {
             Id = id;
         }
-        // Once an entity is created and it has an Id assigned to it , we cannot change this id throught the lifetime of the entity's existance
+        // Once an entity is created and it has an Id assigned to it , we cannot change this id through the lifetime of the entity's existence.
         public Guid Id { get; private init; }
 
         public static bool operator ==(Entity? first, Entity? second)
