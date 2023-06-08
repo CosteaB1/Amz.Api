@@ -2,7 +2,7 @@
 using Amz.Domain.Primitives;
 using Amz.Domain.Shared;
 
-namespace Amz.Domain.ValueObjects
+namespace Amz.Domain.ValueObjects.Product
 {
     public sealed class Name : ValueObject
     {

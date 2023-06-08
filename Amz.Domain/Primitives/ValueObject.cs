@@ -2,6 +2,7 @@
 {
     public abstract class ValueObject : IEquatable<ValueObject>
     {
+        // ovveride la operatori
         public abstract IEnumerable<object> GetAtomicValues();
 
         public override bool Equals(object? obj)

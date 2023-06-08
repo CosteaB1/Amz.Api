@@ -13,5 +13,6 @@ namespace Amz.Application.Commands.Products
         public string OtherDetails { get; set; }
         public Guid SupplierId { get; set; }
         public int Quantity { get; set; }
+        public decimal Price { get; set; }
     }
 }
